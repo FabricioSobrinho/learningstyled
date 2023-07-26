@@ -24,19 +24,13 @@ const Button = styled.button`
   margin: 0 1em;
   padding: 0.25em 1em;
 `
-const BackgroundDiv = styled.div`
-  background-image: url(${bgImage});
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100vh;
-`;
+
 function App() {
   return (
     <>
       <GlobalStyle />
       <Button>Botao</Button>
-      <BackgroundDiv />
+      <img src={Image} alt="Background image"/>
     </>
   )
 }
