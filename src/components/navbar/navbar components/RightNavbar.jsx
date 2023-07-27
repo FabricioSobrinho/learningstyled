@@ -1,4 +1,5 @@
 import { styled } from "styled-components"
+
 import { BsHandbagFill } from "react-icons/bs"
 
 const RightNavbarStyled = styled.div`
@@ -6,34 +7,54 @@ const RightNavbarStyled = styled.div`
   justify-content: space-around;
   align-items: center;
   height: 55%;
-  width: 50%;
-  margin-left: 5%;
+  width: 43.75%;
   color: #f0f8ff;
 
+  nav {
+    width: 100%;
+  }
   li {
-    display: inline;
+    display: inline-block;
     list-style: none;
-    margin: 3rem;
   }
   a {
     text-decoration: none;
     color: #f0f8ff;
+    margin: 2.1vw;
+    transition: .2s;
+  }
+  a:hover {
+    color: #ced3d7;
   }
   .cart-buys {
     display: flex;
-    width: 20%;
+    justify-content: flex-end;
+    width: 10%;
   }
   .cart-buys > svg {
     height: 3rem;
     width: 3rem;
     cursor: pointer;
+    transition: .2s;
+  }
+  svg:hover {
+    color: #ced3d7;
   }
   .cart-buys > div {
     display: flex;
     align-items: center;
-    margin-top: 7.5%;
+    margin-top: 20%;
   }
- `
+
+  @media (max-width: 775px) {
+    width: 50%;
+
+    a {
+      margin: 1.5vw;
+    }
+  }
+
+`
 
 const CircleDiv = styled.div`
   display: flex;
@@ -49,22 +70,25 @@ const CircleDiv = styled.div`
 const RightNavbar = () => {
   return (
     <RightNavbarStyled>
-      <div>
+      <nav>
         <ul>
-          <a href="#">
-            <li>Home</li>
-          </a>
-          <a href="#">
-            <li>Shop</li>
-          </a>
-          <a href="#">
-            <li>About US</li>
-          </a>
-          <a href="#">
-            <li>Help</li>
-          </a>
+          <li>
+            <a href="#">Home</a>
+          </li>
+
+          <li>
+            <a href="#">Shop</a>
+          </li>
+
+          <li>
+            <a href="#">About US </a>
+          </li>
+
+          <li>
+            <a href="#">Help</a>
+          </li>
         </ul>
-      </div>
+      </nav>
 
       <div className="cart-buys">
         <CircleDiv>10</CircleDiv>
