@@ -29,7 +29,6 @@ const RightNavbarStyled = styled.div`
   .cart-buys {
     display: flex;
     justify-content: flex-end;
-    width: 10%;
   }
   .cart-buys > svg {
     height: 3rem;

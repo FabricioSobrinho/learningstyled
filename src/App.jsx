@@ -1,12 +1,16 @@
 //import dependencies
 import { createGlobalStyle } from "styled-components"
+
 //import images
 import Image from "./images/bgimage.jpg"
 import ImageLogo from "./images/logoImage.svg"
-//import components
+
+//import pages and components
 import NavBar from "./components/navbar/NavBar"
 import LeftNavBar from "./components/navbar/navbar components/LeftNavbar"
 import RightNavbar from "./components/navbar/navbar components/RightNavbar"
+
+import MainPage from "./components/main page/MainPage"
 
 //global styles of application
 const GlobalStyle = createGlobalStyle`
@@ -20,19 +24,20 @@ html {
   font-size: 62.5%;
 }
 body {
-  z-index: -1;
-  font-size: 1.6rem;
   height: 100vh;
+  font-size: 1.6rem;
   background-image: url(${Image});
   background-size: 100% 93%;
   background-repeat: no-repeat;
-}
+  padding: 0 4rem;
 
+
+}
 @media (max-width: 850px) {
   html {
    font-size: 50%;
   }
-}
+} 
 `
 
 function App() {
@@ -47,6 +52,7 @@ function App() {
         <RightNavbar />
       </NavBar>
       {/* Start of main page */}
+      <MainPage />
     </>
   )
 }
