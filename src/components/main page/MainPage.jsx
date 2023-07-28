@@ -8,6 +8,7 @@ display: flex;
   height: 85vh;
   width: 100%;
   margin-top: 15vh;
+  padding: 0 4rem;
 `
 
 const MainPage = () => {

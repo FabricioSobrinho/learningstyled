@@ -29,9 +29,7 @@ body {
   background-image: url(${Image});
   background-size: 100% 93%;
   background-repeat: no-repeat;
-  padding: 0 4rem;
-
-
+  overflow-y: hidden; // remover isso !!!!!!!!!!!
 }
 @media (max-width: 850px) {
   html {

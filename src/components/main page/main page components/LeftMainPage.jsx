@@ -4,7 +4,7 @@ const LeftMainPageStyled = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 58%;
+  width: 56.25%;
   height: 100%;
 
   .title-home {
@@ -14,7 +14,7 @@ const LeftMainPageStyled = styled.div`
       font-weight: lighter;
     }
     h1 {
-      font-size: 6.4rem;
+      font-size: 6rem;
       font-weight: lighter;
     }
   }
