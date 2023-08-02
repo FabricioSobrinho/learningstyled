@@ -73,6 +73,9 @@ const CircleDiv = styled.div`
 `
 
 const MenuMobile = styled.div`
+display: none;
+@media (max-width: 550px) {
+  display: flex;
   font-size: 3.5rem;
   color: #d3d3d3;
   @keyframes menuAnimation {
@@ -121,6 +124,7 @@ const MenuMobile = styled.div`
     right: 0;
     border-radius: 10px 0 0 10px;
   }
+}
 `
 
 const RightNavbar = () => {
