@@ -100,6 +100,7 @@ const MenuMobile = styled.div`
     height: 98vh;
     background-color: #adc7ff;
     border-radius: 10px 0 10px 0;
+
     li {
       display: flex;
       flex-direction: column;
@@ -119,7 +120,6 @@ const MenuMobile = styled.div`
     top: 8rem;
     right: 0;
     border-radius: 10px 0 0 10px;
-
   }
 `
 
