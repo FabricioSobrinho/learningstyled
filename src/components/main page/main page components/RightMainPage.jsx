@@ -52,7 +52,7 @@ position: relative;
     }
   }
   @media (max-width: 550px) {
-    height: 70vh;
+    height: 50vh;
     width: 100%;
     .new-product {
       top: 65%;
