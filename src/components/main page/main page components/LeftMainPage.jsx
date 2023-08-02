@@ -60,6 +60,25 @@ const LeftMainPageStyled = styled.div`
         }
     }
   }
+  @media (max-width: 550px) {
+    align-items: center;
+    width: 100vw;
+    padding: 3rem;
+    .title-home {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      h1 {
+        text-align: center;
+      }
+    }
+    .info-home {
+      width: 70%;
+    }
+    .form-home {
+      width: 70%;
+    }
+  }
 `
 
 const LeftMainPage = () => {

@@ -1,6 +1,7 @@
 import { styled } from "styled-components"
 
 import { BsHandbagFill } from "react-icons/bs"
+import { BiMenu } from "react-icons/bi"
 
 const RightNavbarStyled = styled.div`
   display: flex;
@@ -19,9 +20,9 @@ const RightNavbarStyled = styled.div`
   }
   a {
     text-decoration: none;
-    color: #f0f8ff;
+    color: #ded9d9;
     margin: 2.1vw;
-    transition: .2s;
+    transition: 0.2s;
   }
   a:hover {
     color: #ced3d7;
@@ -34,7 +35,8 @@ const RightNavbarStyled = styled.div`
     height: 3rem;
     width: 3rem;
     cursor: pointer;
-    transition: .2s;
+    transition: 0.2s;
+    color: #d3d3d3;
   }
   svg:hover {
     color: #ced3d7;
@@ -52,7 +54,11 @@ const RightNavbarStyled = styled.div`
       margin: 1.5vw;
     }
   }
-
+  @media (max-width: 550px) {
+    nav {
+      display: none;
+    }
+  }
 `
 
 const CircleDiv = styled.div`
@@ -64,6 +70,57 @@ const CircleDiv = styled.div`
   background: #f00;
   border-radius: 50%;
   font-size: 0.8rem;
+`
+
+const MenuMobile = styled.div`
+  font-size: 3.5rem;
+  color: #d3d3d3;
+  @keyframes menuAnimation {
+    from {
+      right: -50vw;
+    }
+    to {
+      right: 0vw;
+    }
+  }
+  @keyframes menuCoverAnimation {
+    from {
+      right: 0vw;
+    }
+    to {
+      right: -50vw;
+    }
+  }
+  .menu {
+    position: absolute;
+    top: 8rem;
+    right: -50vw;
+    animation: menuCoverAnimation 0.5s;
+    width: 50vw;
+    height: 98vh;
+    background-color: #adc7ff;
+    border-radius: 10px 0 10px 0;
+    li {
+      display: flex;
+      flex-direction: column;
+      place-items: center;
+      margin: 3rem 0;
+      border: solid 1px black;
+      a {
+        color: #3b3737;
+      }
+    }
+  }
+
+  .active {
+    background-color: #adc7ff;
+    animation: menuAnimation 0.5s forwards;
+    position: absolute;
+    top: 8rem;
+    right: 0;
+    border-radius: 10px 0 0 10px;
+
+  }
 `
 
 const RightNavbar = () => {
@@ -93,6 +150,34 @@ const RightNavbar = () => {
         <CircleDiv>10</CircleDiv>
         <BsHandbagFill />
       </div>
+
+      <MenuMobile
+        onClick={() => {
+          let menu = document.querySelector(".menu")
+          menu.classList.toggle("active")
+        }}
+      >
+        <BiMenu />
+        <div className="menu">
+          <ul>
+            <li>
+              <a href="#">Home</a>
+            </li>
+
+            <li>
+              <a href="#">Shop</a>
+            </li>
+
+            <li>
+              <a href="#">About US </a>
+            </li>
+
+            <li>
+              <a href="#">Help</a>
+            </li>
+          </ul>
+        </div>
+      </MenuMobile>
     </RightNavbarStyled>
   )
 }

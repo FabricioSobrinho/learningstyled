@@ -11,9 +11,16 @@ import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai"
 const RightMainPageContainer = styled.div`
   height: 100vh;
   width: 43.75%;
+  @media (max-width: 650px) {
+    width: 50%;
+  }
+  @media (max-width: 550px) {
+    width: 100%;
+  }
 `
 
 const RightMainPageStyled = styled.div`
+position: relative;
   display: flex;
   align-items: center;
   background: #f0f8ff;
@@ -34,12 +41,21 @@ const RightMainPageStyled = styled.div`
     background: #8a93e5;
     color: #fff;
     border-radius: 0 0.8rem 0.8rem 0;
-    z-index: 9999;
+    z-index: 1;
   }
   @media (max-width: 850px) {
     justify-content: center;
-    .new-product{
-      display: none;
+    .new-product {
+      position: absolute;
+      left: 0;      
+      top: 45%;
+    }
+  }
+  @media (max-width: 550px) {
+    height: 70vh;
+    width: 100%;
+    .new-product {
+      top: 65%;
     }
 
   }
@@ -61,6 +77,13 @@ const CardProductDiv = styled.div`
     height: 100%;
     width: 100%;
   }
+  @media (max-width: 775px) {
+    height: 85%;
+    width: 100%;
+  }
+  @media (max-width: 550px) {
+    width: 90%;
+  }
 `
 const Form = styled.div`
   display: flex;
@@ -79,6 +102,13 @@ const Form = styled.div`
   }
   button:hover {
     background: #7e86ce;
+  }
+  @media (max-width: 550px) {
+    padding: 3rem 0;
+    button {
+      height: 5rem;
+      width: 5rem;
+    }
   }
 `
 
@@ -126,7 +156,10 @@ const RightMainPage = () => {
       <Form>
         <button
           onClick={() => {
-            setCounter((prevCounter) => prevCounter === 0 ? prevCounter = 2: prevCounter - 1 % products.length
+            setCounter((prevCounter) =>
+              prevCounter === 0
+                ? (prevCounter = 2)
+                : prevCounter - (1 % products.length)
             )
           }}
         >
